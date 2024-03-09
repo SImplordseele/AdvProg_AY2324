@@ -26,7 +26,6 @@ int generateRandomNumber() {
 ***/
 int getPlayerGuess() {
     // TODO: Ask the player guest and return the player's number
-    std::cout << "Enter the guessed number: ";
     int x ; std::cin >> x;
     return x;
 }
@@ -63,8 +62,8 @@ string getAnswer(int number, int randomNumber) {
 ***/
 bool checkSuccess(string answer) {
     // TODO: return the result after checking that player guessed right or wrong
-    
-    return true;
+    if(answer == "Congratulation! You win.")  return true;
+    else return false;
 }
 
 
@@ -77,7 +76,7 @@ bool checkSuccess(string answer) {
 bool checkContinuePlaying(char isContinued) {
     // TODO: return result after checking player continue playing or not
     bool result = false;
-
+    if(isContinued == "Y" || isContinued == "y") result = true;
     return result;
 }
 
@@ -91,7 +90,7 @@ bool checkContinuePlaying(char isContinued) {
 char getPlayerOpinion() {
     // TODO: Ask the player about continue playing and return the player's choice
     char isContinued;
-
+    std::cin >> isContinued;
     return isContinued;
 }
 
