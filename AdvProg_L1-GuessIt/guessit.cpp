@@ -13,8 +13,8 @@ using namespace std;
         number (int) : random number in range 1-100
 ***/
 int generateRandomNumber() {
-    // TODO: Return the random number in range 1 to 100
-    return 100;
+    int randomnumber = rand()%100+1;
+    return randomnumber;
 }
 
 
@@ -26,8 +26,9 @@ int generateRandomNumber() {
 ***/
 int getPlayerGuess() {
     // TODO: Ask the player guest and return the player's number
-
-    return 1;
+    std::cout << "Enter the guessed number: ";
+    int x ; std::cin >> x;
+    return x;
 }
 
 
@@ -40,12 +41,15 @@ int getPlayerGuess() {
 ***/
 string getAnswer(int number, int randomNumber) {
     /*** 
-        TODO: check number with randomNumber and return the result.
+         check number with randomNumber and return the result.
               If number is higher than randomNumber, the answer is "Your number is higher."
               If number is lower than randomNumber, the answer is "Your number is lower."
               If number is equal randomNumber, the answer is "Congratulation! You win."
     ***/
     string answer;
+    if(number > randomNumber) answer = "Your number is higher.";
+    else if(number < randomNumber) answer = "Your number is lower.";
+    else answer = "Congratulation! You win."
 
     return answer;
 }
